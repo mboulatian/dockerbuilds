@@ -145,7 +145,7 @@
             <datasources>
                 <datasource jndi-name="java:jboss/datasources/TradesDS" pool-name="TradesDS" enabled="true" use-java-context="true">
                     <connection-url>jdbc:postgresql://10.158.37.147:9501/informdb01</connection-url>
-                    <driver>h2</driver>
+                    <driver>postgresql-42.2.2.jar</driver>
                     <pool>
                         <min-pool-size>5</min-pool-size>
                         <max-pool-size>10</max-pool-size>
