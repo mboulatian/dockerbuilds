@@ -9,9 +9,10 @@ RUN useradd -b /opt -m -s /bin/sh -d ${INSTALL_DIR} serveradmin && echo serverad
 RUN curl -O https://download.jboss.org/wildfly/${VERSION}/wildfly-${VERSION}.zip \
     && unzip wildfly-${VERSION}.zip -d ${INSTALL_DIR} \
     && rm wildfly-${VERSION}.zip \
+    && curl -O https://jdbc.postgresql.org/download/postgresql-42.2.2.jar --output ${DEPLOYMENT_DIR}
     && chown -R serveradmin:serveradmin /opt \
     && chmod a+x ${WILDFLY_HOME}/bin/standalone.sh \
-    && chmod -R a+rw ${INSTALL_DIR}
+    && chmod -R a+rw ${INSTALL_DIR}    
 USER serveradmin
 ENTRYPOINT ${WILDFLY_HOME}/bin/standalone.sh -c standalone-ee8.xml -b=0.0.0.0 
 EXPOSE 8080
