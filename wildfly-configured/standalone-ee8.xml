@@ -144,7 +144,7 @@
         <subsystem xmlns="urn:jboss:domain:datasources:5.0">
             <datasources>
                 <datasource jndi-name="java:jboss/datasources/TradesDS" pool-name="TradesDS" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:postgresql://10.158.37.147:9501/informdb01</connection-url>
+                    <connection-url>jdbc:postgresql://${env.DB_HOST}:${env.DB_PORT}/${env.DB_NAME}</connection-url>
                     <driver>postgresql-42.2.2.jar</driver>
                     <pool>
                         <min-pool-size>5</min-pool-size>
@@ -154,8 +154,8 @@
                         <flush-strategy>FailingConnectionOnly</flush-strategy>
                     </pool>                    
                     <security>
-                        <user-name>inform_1</user-name>
-                        <password>inform_1</password>
+                        <user-name>${env.DB_USER}</user-name>
+                        <password>${env.DB_PASSWORD}</password>
                     </security>
                 </datasource>            
                 <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
