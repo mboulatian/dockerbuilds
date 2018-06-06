@@ -1,6 +1,6 @@
 FROM tradelogger/wildfly
 LABEL maintainer="Misak Boulatian"
-ENV DB_HOST localhost
+ENV DB_HOST postgres
 ENV DB_PORT 5432
 ENV DB_NAME trades
 ENV DB_USER web
