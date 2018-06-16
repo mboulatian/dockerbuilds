@@ -1,7 +1,7 @@
 FROM tradelogger/java
 LABEL maintainer="Misak Boulatian"
 ENV JDBC_DRIVER_VERSION 42.2.2
-ENV VERSION 12.0.0.Final
+ENV VERSION 13.0.0.Final
 ENV INSTALL_DIR /opt
 ENV WILDFLY_HOME ${INSTALL_DIR}/wildfly-${VERSION}
 ENV DEPLOYMENT_DIR ${WILDFLY_HOME}/standalone/deployments/
